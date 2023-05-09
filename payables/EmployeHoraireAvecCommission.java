@@ -13,13 +13,18 @@ public class EmployeHoraireAvecCommission extends EmployeHoraire implements Comm
         setVentesBrutes(ventesBrutes);
     }
 
+    //
+    // TODO 03-- Ajoutez tout le code nécessaire pour coder la classe au complet coder la classe au completen vous basant sur le diagramme UML
+    //         ainsi que la gestion des erreurs possibles si nécessaire
+    //
+
     public double getTauxCommission() {
         return tauxCommission;
     }
 
     @Override
     public double getVentesBrutes() {
-        return 0;
+        return ventesBrutes;
     }
 
     public void setTauxCommission(double tauxCommission){
@@ -32,13 +37,8 @@ public class EmployeHoraireAvecCommission extends EmployeHoraire implements Comm
 
     @Override
     public double getMontantCommission(double ventesBrutes) {
-        return 0;
+        return ventesBrutes * (tauxCommission / 100);
     }
-
-    //
-    // TODO 03-- Ajoutez tout le code nécessaire pour coder la classe au complet coder la classe au completen vous basant sur le diagramme UML
-    //         ainsi que la gestion des erreurs possibles si nécessaire
-    //
     @Override
     public String toString() {
         return String.format("%s; %s: %,.2f",
