@@ -34,15 +34,16 @@ public class EmployeHoraire extends Employe {
 			throw new IllegalArgumentException("Les heures travaillées doivent être >= 0.0 et <= 168.0" );
 	}
 
-	@Override
-	public double getMontantPaiement() {
-		return getTauxHoraire() * getHeuresTravaillees();
-	}
+
 
 	//
 	// TODO 04-- Ajoutez tout le code nécessaire pour coder la classe au complet coder la classe au completen vous basant sur le diagramme UML
 	//         ainsi que la gestion des erreurs possibles si nécessaire
 	//
+	@Override
+	public double getMontantPaiement() {
+		return getTauxHoraire() * getHeuresTravaillees();
+	}
 	public String toStringSauvegarde() {
 		String info = String.format("ID [%3d] Nom complet [%20s] NAS [%9s] Taux Horaire [%4.2f] Heures travaillées [%4.2f] Mémo [%15s] Catégorie [%20s]",
 				this.getID(), this.getNomComplet(), this.getNumeroAssuranceSociale(),

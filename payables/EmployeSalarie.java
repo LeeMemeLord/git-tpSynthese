@@ -16,6 +16,10 @@ public class EmployeSalarie extends Employe {
 		return salaireHebdomadaire;
 	}
 
+	public void setSalaireHebdomadaire(double salaireHebdomadaire) {
+		this.salaireHebdomadaire = salaireHebdomadaire;
+	}
+
 	@Override
 	public double getMontantPaiement() {
 		return getSalaireHebdomadaire();
