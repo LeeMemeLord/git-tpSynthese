@@ -34,6 +34,10 @@ public class EmployeHoraire extends Employe {
 			throw new IllegalArgumentException("Les heures travaillées doivent être >= 0.0 et <= 168.0" );
 	}
 
+	@Override
+	public double getMontantPaiement() {
+		return getTauxHoraire() * getHeuresTravaillees();
+	}
 
 	//
 	// TODO 04-- Ajoutez tout le code nécessaire pour coder la classe au complet coder la classe au completen vous basant sur le diagramme UML
