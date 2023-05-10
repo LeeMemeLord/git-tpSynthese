@@ -41,10 +41,40 @@ public class Facture extends Payable {
 	public double getPrixParItem() {
 		return prixParItem;
 	}
+
+
+
 	//
 	// TODO 05-- Ajoutez les méthodes nécessaires en vous basant sur le diagramme UML
 	//  		que la gestion des erreurs possibles si nécessaire.
 	//
+	@Override
+	public double getMontantPaiement() {
+		return quantite * prixParItem;
+	}
+
+
+	public void setPrixParItem(double prixParItem0){
+		this.prixParItem = prixParItem0;
+	}
+
+	@Override
+	public String toString() {
+		return "Facture{" +
+				"numeroPiece='" + numeroPiece + '\'' +
+				", descriptionPiece='" + descriptionPiece + '\'' +
+				", quantite=" + quantite +
+				", prixParItem=" + prixParItem +
+				", categorie=" + categorie +
+				", echeanceJours=" + echeanceJours +
+				", memo='" + memo + '\'' +
+				'}';
+	}
+
+	public String toStringAffichage() {
+		String affichage = "";
+		return affichage;
+	}
 	public String toStringSauvegarde() {
 		String info = String.format("ID [%3d] Numéro [%15s] Description [%25s] Nombre [%3d] Prix [%10.2f] Mémo [%15s] Catégorie [%20s]",
 				this.getID(), this.numeroPiece, this.getDescriptionPiece(), this.getQuantite(), this.getPrixParItem(), this.getMemo(), this.getCategorieString());
