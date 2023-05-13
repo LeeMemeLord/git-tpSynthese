@@ -3,6 +3,9 @@ package payables;
 public class EmployeHoraire extends Employe {
 	private double tauxHoraire;
 	private double heuresTravaillees;
+	public final double HEURES_TEMPS_COMPLET = 40;
+	public final double RATIO_TEMPS_SUPP = 1.5;
+
 
 	public EmployeHoraire(int id, String nom, String nas,
 						  double tauxHoraire, double heuresTravaillees, String memo) {

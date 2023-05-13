@@ -40,6 +40,12 @@ public class EmployeHoraireAvecCommission extends EmployeHoraire implements Comm
         return ventesBrutes * (tauxCommission / 100);
     }
     @Override
+    public double getMontantPaiement(){
+        double montantSalaireHoraire = getTauxHoraire() * getHeuresTravaillees();
+        double montantCommission = getMontantCommission(getVentesBrutes());
+        return montantSalaireHoraire + montantCommission;
+    }
+    @Override
     public String toString() {
         return String.format("%s; %s: %,.2f",
                 super.toString(),

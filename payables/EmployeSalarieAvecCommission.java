@@ -24,15 +24,28 @@ public class EmployeSalarieAvecCommission extends EmployeSalarie implements Comm
     }
 
     public void setTauxCommission(double tauxCommission) {
-        this.tauxCommission = tauxCommission;
+        if(tauxCommission >= 0.0)
+            this.tauxCommission = tauxCommission;
+        else
+            throw new IllegalArgumentException("Le taux de commission doit etre >= 0.0");
     }
 
     public void setVentesBrutes(double venteBrutes) {
-        this.venteBrutes = venteBrutes;
+        if(venteBrutes >= 0.0)
+            this.venteBrutes = venteBrutes;
+        else
+            throw new IllegalArgumentException("une vente brute doit etre >= 0.0");
     }
 
     @Override
     public double getMontantCommission(double ventesBrutes) {
-        return 0;
+        return ventesBrutes * (tauxCommission/100);
+    }
+
+    @Override
+    public double getMontantPaiement(){
+        double salaireHebdomadaire = getSalaireHebdomadaire();
+        double montantCommission = getMontantCommission(getVentesBrutes());
+        return salaireHebdomadaire + montantCommission ;
     }
 }

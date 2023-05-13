@@ -17,7 +17,10 @@ public class EmployeSalarie extends Employe {
 	}
 
 	public void setSalaireHebdomadaire(double salaireHebdomadaire) {
-		this.salaireHebdomadaire = salaireHebdomadaire;
+		if(salaireHebdomadaire >= 0.0)
+			this.salaireHebdomadaire = salaireHebdomadaire;
+		else
+			throw new IllegalArgumentException("Le salaire hebdomadaire doit etre > =0.0");
 	}
 
 	@Override
