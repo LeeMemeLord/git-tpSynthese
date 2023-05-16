@@ -2,13 +2,14 @@ package inventaire;
 
 import payables.Payable;
 
-public class NoeudPayable {
-    public Payable peyable;
+public class NoeudPayable extends Payable{
+    public Payable payable;
     private NoeudPayable suivant;
 
 
     public NoeudPayable(Payable payable, NoeudPayable suivant){
-        this.peyable = payable;
+        super(payable.getID());
+        this.payable = payable;
         this.suivant =suivant;
     }
 
@@ -18,5 +19,15 @@ public class NoeudPayable {
 
     public void setNoeudSuivant(NoeudPayable suivant) {
         this.suivant = suivant;
+    }
+
+    @Override
+    public double getMontantPaiement() {
+        return payable.getMontantPaiement();
+    }
+
+    @Override
+    public String toStringSauvegarde() {
+        return null;
     }
 }

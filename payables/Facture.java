@@ -54,8 +54,8 @@ public class Facture extends Payable {
 	}
 
 
-	public void setPrixParItem(double prixParItem0){
-		this.prixParItem = prixParItem0;
+	public void setPrixParItem(double prixParItem){
+		this.prixParItem = prixParItem;
 	}
 
 	@Override

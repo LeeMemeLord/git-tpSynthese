@@ -1,5 +1,4 @@
 package inventaire;
-
 import exceptions.*;
 import payables.*;
 
